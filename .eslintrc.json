@@ -1,3 +1,102 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:jest/all"
+  ],
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true,
+    "jest": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["tsconfig.json"],
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "eslint-plugin-jest",
+    "eslint-plugin-react",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/consistent-type-definitions": "off",
+    "@typescript-eslint/dot-notation": "off",
+    "@typescript-eslint/member-delimiter-style": [
+      "off",
+      {
+        "multiline": {
+          "delimiter": "semi",
+          "requireLast": true
+        },
+        "singleline": {
+          "delimiter": "semi",
+          "requireLast": false
+        }
+      }
+    ],
+    "@typescript-eslint/member-ordering": "off",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": "variable",
+        "format": [
+          "camelCase",
+          "PascalCase",
+          "UPPER_CASE"
+        ]
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/no-var-requires": "error",
+    "@typescript-eslint/quotes": [
+      "error",
+      "single",
+      { "avoidEscape": true }
+    ],
+    "@typescript-eslint/semi": ["error", "never"],
+    "@typescript-eslint/type-annotation-spacing": "error",
+    "brace-style": [
+      "off",
+      "1tbs"
+    ],
+    "eol-last": "error",
+    "id-blacklist": [2, "toto", "foo", "bar", "baz", "test"],
+    "id-match": "error",
+    "no-console": "error",
+    "react/jsx-wrap-multilines": "off",
+    "react/prop-types": "off",
+    "object-curly-spacing": ["error", "always"],
+    "arrow-spacing": "error",
+    "jest/no-hooks": "off",
+    "jest/prefer-expect-assertions": "off",
+    "jest/no-export": "off",
+    "jest/no-conditional-expect": "off",
+    "jest/lowercase-name": [ "error", { "ignore": ["describe"] } ],
+    "jest/unbound-method": "error",
+    "jest/no-done-callback": "off",
+    "default-case": "error",
+    "eqeqeq": "error",
+    "no-multi-spaces": "error",
+    "no-param-reassign": "error",
+    "yoda": "error",
+    "react/jsx-closing-bracket-location": [1, "line-aligned"],
+    "react/jsx-first-prop-new-line": ["error", "multiline"],
+    "react/jsx-indent": [2, 2],
+    "react/jsx-indent-props": [2, 2],
+    "react/jsx-max-props-per-line": [1, { "when": "always" }],
+    "react/jsx-one-expression-per-line": ["error", { "allow": "literal" }]
+  }
 }
